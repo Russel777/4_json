@@ -3,8 +3,8 @@ import sys
 
 
 def load_data(filepath):
-    with open(filepath) as f:
-        return json.loads(f.read())
+    with open(filepath) as json_content:
+        return json.loads(json_content.read())
 
 
 def pretty_print_json(data):
