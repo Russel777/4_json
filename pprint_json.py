@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 
 
 def load_data(filepath):
@@ -12,4 +13,8 @@ def pretty_print_json(json_content):
 
 
 if __name__ == '__main__':
-    pretty_print_json(load_data(sys.argv[1]))
+    for param in sys.argv[1:]:
+        if os.path.isfile(param):
+            pretty_print_json(load_data(param))
+        else:
+            print("File is not exist")
